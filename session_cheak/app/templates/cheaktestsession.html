@@ -7,11 +7,15 @@
     <title>Get session</title>
 </head>
 <body>
-    <h1>Welcome {{name}} {{surname}}</h1>
-    <h1>{{request.session.get_session_cookie_age}}</h1>
-    <h1>{{request.session.get_expiry_age}}</h1>
-    <h1>{{request.session.get_expiry_date}}</h1>
-    <h1>{{request.session.get_expire_at_browser_close}}</h1>
+
+    
+    {% if request.session.test_cookie_worked == True %}
+        <h1> This Browser allow the Cookie</h1>
+
+        {% else %}
+        <h1> This Browser not allow the Cookie</h1>
+    {% endif %}
+        
     
 </body>
 </html>
